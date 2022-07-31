@@ -3,7 +3,6 @@ import { MaxLengthValidator } from '@angular/forms';
 import { Character } from '../models/character.model';
 
 @Component({
-  selector: 'app-list-characters',
   templateUrl: './list-characters.component.html',
   styleUrls: ['./list-characters.component.scss'],
 })
