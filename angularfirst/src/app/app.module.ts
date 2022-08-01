@@ -1,6 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+import {
+  BsDatepickerModule,
+  BsDatepickerConfig,
+} from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,14 +23,17 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     ListCharactersComponent,
-    CreateCharacterComponent
+    CreateCharacterComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [BsDatepickerConfig],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

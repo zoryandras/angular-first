@@ -4,7 +4,8 @@ export class Character {
     gender: string;
     game: string;
     platform: string;
-    dateOfCreation: number;
+    dateOfCreation: Date;
     isCustom: boolean;
-    photoPath: string;
+    role: string;
+    photo: string;
 }

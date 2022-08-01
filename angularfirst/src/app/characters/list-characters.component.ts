@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MaxLengthValidator } from '@angular/forms';
+import { ɵINTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS } from '@angular/platform-browser-dynamic';
 import { Character } from '../models/character.model';
 
 @Component({
@@ -14,9 +15,10 @@ export class ListCharactersComponent implements OnInit {
       gender: 'male',
       game: 'Cyberpunk 2077',
       platform: 'X-Box Series X',
-      dateOfCreation: 2022,
+      dateOfCreation: new Date('05/05/2022'),
       isCustom: true,
-      photoPath: 'assets/images/001.png',
+      role: 'Melee DPS',
+      photo: 'assets/images/001.png',
     },
     {
       id: 2,
@@ -24,9 +26,10 @@ export class ListCharactersComponent implements OnInit {
       gender: 'male',
       game: 'Final Fantasy XIV',
       platform: 'PC',
-      dateOfCreation: 2021,
+      dateOfCreation: new Date('01/19/2021'),
       isCustom: true,
-      photoPath: 'assets/images/002.png',
+      role: 'Melee DPS',
+      photo: 'assets/images/002.png',
     },
     {
       id: 3,
@@ -34,9 +37,10 @@ export class ListCharactersComponent implements OnInit {
       gender: 'male',
       game: 'Sunset Overdrive',
       platform: 'X-Box Series X',
-      dateOfCreation: 2020,
+      dateOfCreation: new Date('08/10/2020'),
       isCustom: true,
-      photoPath: 'assets/images/003.png',
+      role: 'Ranged DPS',
+      photo: 'assets/images/003.png',
     },
     {
       id: 4,
@@ -44,9 +48,10 @@ export class ListCharactersComponent implements OnInit {
       gender: 'female',
       game: 'Diablo 2 Resurrected',
       platform: 'PC',
-      dateOfCreation: 2022,
+      dateOfCreation: new Date('11/06/2022'),
       isCustom: true,
-      photoPath: 'assets/images/004.png',
+      role: 'Magic DPS',
+      photo: 'assets/images/004.png',
     },
   ];
   constructor() {}

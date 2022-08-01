@@ -1,1 +1,86 @@
-<p>create-character works!</p>
+<form ngNativeValidate  #characterForm="ngForm" (ngSubmit)="saveCharacter(characterForm)">
+    <div class="card text-primary bg-light mb-3 needs-validation">
+
+        <div class="card-header">
+            <h3 class="card-title">Create new character!</h3>
+        </div>
+
+        <div class="card-body">
+
+            <div class="form-group mb-3">
+                <label for="name" class="control-label">Name</label>
+                <input id="name" name="n" ngModel class="form-control" type="text" class="form-control" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="game">Game</label>
+                <input id="game" name="game" ngModel class="form-control" type="text" class="form-control" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="platform">Platform</label>
+                <input id="platform" name="platform" ngModel class="form-control" type="text" class="form-control">
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Gender</label>
+                <div class="form-control">
+                    <label class="form-check-label" for="male">
+                        <input ngModel class="form-check-input" type="radio" name="gender" value="male">
+                        Male
+                    </label>
+                    <label class="form-check-label" for="female">
+                        <input ngModel class="form-check-input ms-5" type="radio" name="gender" value="female">
+                        Female
+                    </label>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label>Is it a Custom Character?</label>
+                <div class="form-control">
+                    <label class="checkbox-inline" for="male">
+                        <input ngModel class="form-check-input" type="checkbox" name="isCustom">
+                        Custom Character
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Your character role</label>
+                    <select id="role" name="role" ngModel class="form-control">
+                        <option *ngFor="let role of role" [value]="role.id">
+                            {{role.name}}
+                        </option>
+                    </select>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
+                <label for="dateOfCreation">Date of Creation</label>
+                <input id="dateOfCreation" name="dateOfCreation" ngModel class="form-control" placement="right" type="text" bsDatepicker [bsConfig]="datePickerConfig" class="form-control">
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="photo">Photo</label>
+                <input id="photo" type="text" class="form-control" name="photo" ngModel class="form-control">
+            </div>
+            
+            <div class="form-group mb-3">
+                <button type="button" (click)="togglePhotoPreview()" class="btn btn-primary">
+                    {{previewPhoto ? "Hide " : "Show "}} Preview
+                </button>
+            </div>
+            
+            <div class="form-group mb-3">
+                <img [src]="photo" height="200" width="200" *ngIf="previewPhoto" />
+            </div>
+
+
+        </div>
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </div>
+</form>
+
+Angular Generated Form Modul: {{characterForm.value | json}}
